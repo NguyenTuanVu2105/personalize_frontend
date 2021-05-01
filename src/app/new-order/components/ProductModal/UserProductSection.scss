@@ -1,0 +1,59 @@
+.user-variant-section {
+  .Polaris-Modal-Section {
+    padding-top: 0;
+    padding-bottom: 1.5rem;
+    position: static;
+
+    .top-row {
+      position: sticky;
+      z-index: 10;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      background-color: #fff;
+      top: 0;
+      margin-left: -20px;
+      margin-right: -20px;
+      box-shadow: 0 1px 10px rgba(44, 42, 68, .12);
+      margin-bottom: 5px;
+    }
+
+    .user-variant-item {
+      border-bottom: 1px solid #e2e2e2;
+      padding: 10px;
+
+      .ant-checkbox + span {
+        width: 100%;
+
+        .Polaris-Stack__Item.Polaris-Stack__Item--fill {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-wrap: wrap;
+
+          .variant-title {
+            flex-basis: 100%;
+          }
+        }
+
+        .Polaris-Stack__Item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+
+          .first-item-cost-row {
+            flex-basis: 100%;
+            text-align: right;
+            font-size: 1.4rem;
+
+            & + .Polaris-Caption {
+              flex-basis: 100%;
+              text-align: right;
+              font-size: 1.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

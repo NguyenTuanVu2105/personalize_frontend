@@ -1,0 +1,132 @@
+.product-info-modal-container {
+  .product-info-button {
+    border-radius: 3px;
+    box-shadow: 0 1px 10px rgba(44, 42, 68, .12);
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+  }
+}
+
+.product-info-detail-section {
+  li {
+    overflow: unset;
+  }
+
+  .mockup-thumbnail {
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid rgba(255, 255, 255, 0);
+
+    &.mockup-active {
+      border: 1px solid #4153ae;
+    }
+  }
+
+  .meta-basecost {
+    color: #202E78;
+    font-size: 26px;
+    font-weight: bolder;
+  }
+
+  .meta-basecost-caption {
+    font-size: 12px;
+  }
+
+  .mockup-sample-container {
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 45%;
+      z-index: 10;
+      cursor: pointer;
+      color: #38469b;
+      font-size: 22px;
+    }
+  }
+}
+
+.flex-center-vertical {
+  display: flex;
+  align-items: center;
+}
+
+.heading-icon {
+  font-size: 2.4rem;
+  color: #8597ab;
+  margin-right: 10px;
+}
+
+.product-info-tab-section {
+  .design-product-instruction {
+    padding-left: 20px;
+    padding-bottom: 15px;
+
+    .step-number {
+      padding: 3px;
+      background-color: #fff;
+      border-radius: 50%;
+      border: 2px solid #d6d9dc;
+      width: 30px;
+      text-align: center;
+      margin-right: 10px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+  }
+
+  .best-resutl-tip {
+    padding-left: 20px;
+    padding-bottom: 15px;
+
+    .step-number {
+      padding: 3px;
+      background-color: #fff;
+      border-radius: 50%;
+      border: 2px solid #d6d9dc;
+      width: 30px;
+      text-align: center;
+      margin-right: 10px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+  }
+
+  .cut-and-sew-disclaimer {
+    padding-left: 20px;
+    padding-bottom: 15px;
+
+    .step-number {
+      padding: 3px;
+      background-color: #fff;
+      border-radius: 50%;
+      border: 2px solid #d6d9dc;
+      min-width: 30px;
+      width: 30px;
+      text-align: center;
+      margin-right: 10px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+  }
+
+  table.processing-shipping-time {
+    margin-top: 15px;
+
+    thead {
+      tr {
+        th {
+          text-transform: uppercase;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

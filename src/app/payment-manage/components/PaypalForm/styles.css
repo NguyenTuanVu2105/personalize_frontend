@@ -1,0 +1,4 @@
+#braintree-payment .paypal-button {
+    display: flex;
+    justify-content: center;
+}

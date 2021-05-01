@@ -1,0 +1,76 @@
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ant-statistic-content {
+  font-size: 16px;
+}
+
+
+.bg-white {
+  background-color: white;
+}
+
+.item-sku-info {
+  color: lightslategray;
+  font-size: 13px;
+}
+
+.border-order {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+.infor-orderDetail {
+  font-size: 14px;
+}
+
+.flex-spacebetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.color-gray {
+  color: gray
+}
+
+.order-pack-card {
+  &+.order-pack-card {
+    margin-top: 2rem;
+  }
+  .Polaris-ButtonGroup {
+    .Polaris-Button{
+      &:hover{
+        text-decoration: none;
+        a{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.order-steps{
+  .ant-steps-item-icon{
+    background: none !important;
+  }
+
+  .ant-steps-item-tail::after{
+    height: 8px;
+    border-radius: 4px;
+  }
+
+  .step-done{
+    .ant-steps-item-tail::after {
+      background-color: rgb(135, 208, 104) !important;
+    }
+  }
+
+  .step-done.next-step-process{
+    .ant-steps-item-tail::after {
+      background-color: rgb(24,144,255) !important;
+    }
+  }
+}

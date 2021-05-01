@@ -1,0 +1,78 @@
+.tickets_list {
+  min-height: 92px;
+  background-color: #fff;
+  box-shadow: 0 1px 0 0 #cfd7df;
+  display: table;
+  width: calc(100% - 15px);
+  box-sizing: border-box;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+
+
+
+.tickets_list_content {
+  float: none;
+  vertical-align: middle;
+}
+
+
+
+.ticket_modal{
+  .ticket_cell {
+    padding: 10px 20px
+  }
+}
+
+.Polaris-ResourceItem {
+  .tickets_list_content{
+    display: inline-table;
+  }
+}
+
+
+.avatar_ticket {
+  width: 44px;
+  margin-right: 10px;
+}
+
+.ticket_content_wrap {
+  padding-left: 16px;
+}
+
+.ticket_list_content, .ticket_content_wrap {
+  vertical-align: middle;
+}
+
+p.no-link{
+  a:hover{
+    text-decoration: none !important;
+  }
+}
+
+.ticket-row {
+  background: rgba(242,245,245,0.8);
+}
+
+.ticket-row.unread-ticket {
+  a{
+    font-weight: bold;
+  }
+  &{
+    font-weight: bold;
+  }
+  background: rgba(255,255,255,1);
+}
+
+
+
+.resolved-ticket {
+  a{
+    color: #959595 !important;
+  }
+  &{
+    color: #959595;
+  }
+
+}

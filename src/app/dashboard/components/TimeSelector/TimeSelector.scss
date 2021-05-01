@@ -1,0 +1,40 @@
+.dashboard-container {
+    .shadow-box {
+        -webkit-box-shadow: 1px 1px 15px rgba(41,60,74,.18);
+        box-shadow: 1px 1px 15px rgba(41,60,74,.18);
+    }
+    
+    .active-range {
+        background-color: red;    
+    }
+
+    .Polaris-ButtonGroup {
+        align-items: stretch;
+    }
+
+    .Polaris-ButtonGroup .Polaris-Button {
+        height: 100%;
+    }
+}
+
+.no-arrow{
+    .ant-popover-arrow{
+        display: none;
+    }
+    .ant-popover-inner-content{
+        padding: 0;
+    }
+}
+
+.popover-no-padding-top{
+    padding-top: 0;
+}
+
+.dashboard-time-selector{
+    .Polaris-Button--fullWidth{
+        .Polaris-Button__Content{
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+}

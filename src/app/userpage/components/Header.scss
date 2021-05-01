@@ -1,0 +1,127 @@
+@mixin disable-selection {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.header-menu-item {
+  position: relative;
+}
+
+.header-menu-item:hover {
+  .header-menu-hidden {
+    display: block;
+  }
+
+  .icon-menu-open {
+    transform: rotate(-180deg);
+  }
+}
+
+.user-active {
+  .icon-menu-open {
+    transform: rotate(-180deg);
+  }
+}
+
+.icon-menu-open {
+  transition: all 0.2s;
+}
+
+.header-menu-hidden {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-top: -10px;
+  left: 0;
+
+  .ant-menu-item {
+    line-height: 30px;
+    height: 30px;
+  }
+}
+
+
+.email-container > * {
+  margin: 5px;
+  color: gray;
+  font-size: 1rem !important;
+}
+
+.email-container {
+  font-size: 1rem;
+  color: #777;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+
+.email-container svg {
+  font-size: 1.1em !important;
+}
+
+.email-container .ant-badge {
+  margin-right: .5em;
+}
+
+.email-container:not(:first-child) {
+  margin-left: 1.5em;
+}
+
+.app-header.has-banner{
+  top: 64px;
+}
+
+.app-header {
+  position: fixed;
+  width: 100%;
+  z-index: 21;
+  background: #fff !important;
+  border-bottom: 1px solid rgba(0, 0, 0, .0625);
+  box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .app-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .user-dropdown {
+    .Polaris-Stack {
+      .Polaris-Stack__Item:last-child {
+        margin-left: 0.8rem;
+      }
+    }
+
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .Polaris-Avatar--hidden.Polaris-Avatar--hasImage {
+    visibility: visible !important;
+  }
+
+  @include disable-selection;
+}
+
+.header-icon {
+  margin-right: 5px;
+  width: 20px !important;
+}
+
+@media (max-width: 1100px) {
+  .app-header {
+    display: none;
+  }
+}
+

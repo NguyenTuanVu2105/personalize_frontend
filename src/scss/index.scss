@@ -1,0 +1,224 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~@shopify/polaris/styles';
+@import './commons/index';
+@import './shared/index';
+@import "billings/index";
+@import "shopifilize/index";
+@import "responsive/index";
+@import "antd-customize";
+
+html,
+body,
+#root {
+  min-height: 100vh;
+  //font-size: 14px;
+}
+
+// temp css
+// TODO remove this after fixed DUPLICATE PRODUCT bug
+
+
+@font-face {
+  font-family: "Aclonica";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617852116036_Aclonica%20Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Acme";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617852326779_Acme-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Akaya Kanadaka";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938548258_Akaya%20Kanadaka.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Berkshire Swash";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938774338_Berkshire%20Swash.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Courgette";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938591827_Courgette.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Dancing Script";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938862083_Dancing%20Script.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Dancing Script Bold";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938881785_Dancing%20Script%20Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Fredoka One";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938823904_Fredoka%20One.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Fugaz One";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938406931_Fugaz%20One.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kaushan Script";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938808015_Kaushan%20Script.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Oi";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938491375_Oi.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Pacifico";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938910885_Pacifico.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Permanent Marker";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938922332_Permanent%20Marker.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Righteous";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938841524_Righteous.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Syne Mono";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938610876_Syne%20Mono.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Zilla Slab Highlight";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938790266_Zilla%20Slab%20Highlight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Zilla Slab Highlight Bold";
+  src: url(https://fulfillmenthub.storage.googleapis.com/personalize-fonts/22079103369233_1617938631728_Zilla%20Slab%20Highlight%20Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "ShopifySans";
+  src: url("https://cdn.shopify.com/shopify-marketing_assets/static/ShopifySans--regular.woff2") format("woff2");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "ShopifySans";
+  src: url("https://cdn.shopify.com/shopify-marketing_assets/static/ShopifySans--medium.woff2") format("woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ShopifySans";
+  src: url("https://cdn.shopify.com/shopify-marketing_assets/static/ShopifySans--bold.woff2") format("woff2");
+  font-weight: bold;
+}
+
+//body {
+//  margin: 0;
+//  padding: 0;
+//  font-family: ShopifySans, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+//  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+//  sans-serif;
+//  -webkit-font-smoothing: antialiased;
+//  -moz-osx-font-smoothing: grayscale;
+//}
+
+//html {
+//  /* Load system fonts */
+//  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe
+//  UI, Helvetica Neue, sans-serif;
+//
+//  /* Make type rendering look crisper */
+//  -webkit-font-smoothing: antialiased;
+//  -moz-osx-font-smoothing: grayscale;
+//
+//  /* Disable auto-enlargement of small text in Safari */
+//  text-size-adjust: 100%;
+//
+//  /* Enable kerning and optional ligatures */
+//  text-rendering: optimizeLegibility;
+//}
+
+/**
+ * Form elements render using OS defaults,
+ * so font-family inheritance must be specifically declared
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+
+[data-lock-scrolling] {
+  overflow: auto !important;
+  margin: 0 !important;;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-corner {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px grey;
+  border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #9a929266;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9a9292ff;
+}
+
+.ant-list {
+  .ant-row > * {
+    display: inline-block;
+  }
+}
+
+.flex-evenly {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+span.link-ui {
+  color: #006FBB;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+#fc_frame, #fc_frame.fc-widget-normal {
+  z-index: 99 !important;
+}

@@ -1,0 +1,80 @@
+.attributes-selection {
+  margin: 0 0 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+
+  li.color-attribute-item {
+    border-radius: 999px;
+    padding: .25rem;
+    margin-right: .5rem;
+    border: 1px solid transparent;
+
+    .color-attribute {
+      cursor: pointer;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 3rem;
+    }
+  }
+
+  li.attribute-item {
+    display: inline-block;
+    margin: .1em .1em;
+    min-width: 2rem;
+
+    .attribute {
+      background-color: #ffffff;
+      cursor: pointer;
+      font-weight: bold;
+      min-width: 2.5rem;
+      min-height: 2.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .attribute-selected {
+      background-color: lightcoral;
+      border: 1px solid coral;
+      color: white;
+    }
+    .attribute-size {
+        width: 35px;
+        height: 35px;
+      cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .attribute-color {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 10em;
+      width: 2.8rem;
+      height: 2.8rem;
+      text-align: center;
+      border: 1px solid lightgrey;
+    }
+  }
+}
+
+.step-selector-color {
+  .Polaris-Card__Section {
+    padding-top: 8px;
+  }
+}
+
+.color-selector {
+  padding: 1.5rem;
+  border-radius: 3px;
+  box-shadow: 0 1px 10px rgba(44, 42, 68, .12);
+  background-color: #fff;
+  height: 97%;
+  margin-bottom: 1em;
+}

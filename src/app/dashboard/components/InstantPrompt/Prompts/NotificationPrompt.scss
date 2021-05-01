@@ -1,0 +1,16 @@
+.notification-banner {
+  .Polaris-Banner {
+    background-color: #fdf7e3;
+    box-shadow: var(--p-banner-border, inset 0 3px 0 0 var(--p-border, #eec200), inset 0 0 0 0 transparent, 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15));;
+
+    .Polaris-Icon {
+      svg{
+        fill: #8a6116;
+      }
+    }
+
+    .Polaris-Icon--colorInkLighter::before {
+      background-color: #ffea8a;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.ant-menu-item {
+  display: flex !important;
+  align-items: center !important;
+
+  a {
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+
+.ant-menu {
+  .ant-menu-item {
+    width: 100% !important;
+  }
+}

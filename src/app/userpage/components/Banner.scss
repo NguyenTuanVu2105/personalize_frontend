@@ -1,0 +1,75 @@
+.app-banner {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: url("https://storage.googleapis.com/printholo/event/banner_backgroud_1.png");
+  background-size: cover;
+  .banner-iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+    overflow: hidden;
+  }
+
+  .close-banner-container{
+    position: absolute;
+    top: 17px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .close-banner {
+    color: white;
+    font-size: 1.2em !important;
+  }
+
+  .close-banner-container:hover {
+    background-color: rgba(0, 195, 96, 0.24);
+    .close-banner {
+      color: #319E50 !important;
+    }
+  }
+
+  .ant-carousel {
+    height: 100%;
+
+    .banner-carousel {
+      height: 100%;
+
+      .slick-list {
+        height: 100%;
+
+        .slick-track {
+          height: 100%;
+
+          div {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .banner-content-container {
+  }
+}
+
+
+.app-banner.has-banner {
+  display: block;
+}
+
+.layout-body.has-banner {
+  .catalog-container {
+    min-height: calc(100vh - 216px) !important;
+  }
+}

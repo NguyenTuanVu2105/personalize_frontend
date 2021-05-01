@@ -1,0 +1,70 @@
+:root {
+    --width-bank-logo: 120px;
+}
+
+.bankLogo {
+    right: 50%;
+    width: var(--width-bank-logo);
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.bb-ourocard-black {
+    composes: bankLogo;
+    width: 40px;
+    top: 15px;
+    left: 30px;
+}
+
+.bradesco-normal-black {
+    composes: bankLogo;
+    top: 15px;
+    left: 30px;
+}
+
+.bradesco-prime-black {
+    composes: bankLogo;
+    top: -20px;
+    left: 13px;
+    width: 140px;
+}
+
+.caixa-normal-black {
+    composes: bankLogo;
+    top: 20px;
+    left: 205px;
+}
+
+.itau-normal-black {
+    composes: bankLogo;
+    width: 300px;
+    top: -20px;
+    left: 25px;
+}
+
+.itau-personnalite-black {
+    composes: bankLogo;
+    width: 70px;
+    top: 20px;
+    left: 140px;
+}
+
+.nubank {
+    composes: bankLogo;
+    top: 15px;
+    left: 115px;
+}
+
+.nubank-normal-gold {
+    composes: nubank;
+}
+
+.nubank-normal-platinum {
+    composes: nubank;
+}
+
+.santander-normal-black {
+    composes: bankLogo;
+    top: 15px;
+    left: 20px;
+}

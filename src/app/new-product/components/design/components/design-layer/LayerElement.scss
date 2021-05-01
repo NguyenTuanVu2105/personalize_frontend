@@ -1,0 +1,56 @@
+.step-drag-layer {
+
+  margin-top: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 10px rgba(44, 42, 68, 0.12) !important;;
+
+  .btn-light {
+    background-color: #ebf0f3;
+    padding: 5px;
+    box-shadow: 1px 1px 2px #aaaaaa;
+  }
+
+  .btn-light.error {
+    background-color: #fddbd3 !important;
+  }
+
+  .active {
+    .btn-light {
+      background-color: #c0ffbf;
+      box-shadow: -4px 0px 0px -1px #5C6AC4, 1px 1px 2px #aaaaaa;
+    }
+  }
+
+  .btn-light:hover {
+    .drag-icon {
+      opacity: 1;
+    }
+  }
+
+  .btn-light:active {
+    .drag-icon {
+      opacity: 1;
+    }
+  }
+
+  .drag-icon {
+    opacity: 0;
+  }
+}
+
+.layer-item {
+  width: 100%;
+  height: 100%;
+
+  .ant-spin {
+    display: flex;
+  }
+}
+
+.add-button {
+  position: relative;
+  flex: 0 1 32%;
+  display: flex;
+  align-self: stretch;
+  min-width: 32%;
+}

@@ -1,0 +1,25 @@
+.timeline-container {
+  background: #ffffff;
+  padding: 1.5em;
+  box-shadow: var(--p-card-shadow, 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15));
+  height: 100%;
+}
+
+.timeline-heading {
+  margin-left: 1.9em;
+}
+
+.timeline-detail .timeline-item p:first-child {
+  font-weight: 600;
+  color: rgb(125, 140, 153);
+}
+
+.timeline-detail .timeline-item p:nth-child(2) {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.timeline-detail .timeline-item p:nth-child(3) {
+    font-size: 1em;
+}

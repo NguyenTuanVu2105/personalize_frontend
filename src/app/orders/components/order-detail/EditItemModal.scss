@@ -1,0 +1,10 @@
+
+.edit-item-modal input[type=number]::-webkit-inner-spin-button, 
+.edit-item-modal input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.custom-popover-container.ant-popover{
+    z-index: 999;
+}

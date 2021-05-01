@@ -1,0 +1,8 @@
+.CommonStatusTag{
+  span{
+    cursor: context-menu;
+  }
+  span:focus{
+    outline: none;
+  }
+}

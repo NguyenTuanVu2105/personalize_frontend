@@ -1,0 +1,29 @@
+.number-form-button {
+  background-color: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  box-shadow: 0 1px 10px rgba(44, 42, 68, .12);
+  z-index: 10;
+
+  .form-control {
+    font-size: 14px;
+    font-weight: bolder;
+    text-align: center;
+    height: calc(1em + 0.75rem + 2px);
+    padding: 0.375rem 0;
+  }
+
+  .btn {
+    color: #a0a2a5;
+    padding: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:hover {
+      color: #5C6AC4 !important;
+    }
+  }
+}

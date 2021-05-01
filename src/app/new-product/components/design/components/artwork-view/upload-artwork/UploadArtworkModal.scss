@@ -1,0 +1,29 @@
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                   supported by Chrome, Opera and Firefox */
+}
+
+.artwork-default {
+  position: absolute;
+  background-color: #ed4642;
+  color: white;
+  border: 1px solid #ed4642;
+  padding: 0 5px;
+  top: 0;
+  left: 0;
+  //font-size: 1.3rem;
+  z-index: 99999;
+  font-weight: 500;
+}
+
+.modal-upload-content{
+  .Polaris-Tabs__Wrapper{
+    display: none;
+  }
+}

@@ -1,0 +1,63 @@
+.background-color-selector {
+  position: relative;
+  padding: 1em;
+  border-radius: 3px;
+  box-shadow: 0 1px 10px rgba(44, 42, 68, .12);
+  background-color: #fff;
+  margin-bottom: 1em;
+
+  .chrome-picker {
+    box-shadow: none !important;
+    font-family: unset !important;
+    border-radius: 3px !important;
+
+    input {
+      font-size: 14px !important;
+      height: 30px !important;
+      font-weight: bolder;
+
+      &:focus {
+        border: 1px solid #fbfbfb !important;
+        outline: none !important;
+      }
+    }
+  }
+
+  .background-color-selector-item {
+    .chrome-picker {
+      div:nth-child(2) {
+        div.flexbox-fix:nth-child(2) {
+          div:last-child {
+            div {
+              margin-top: 3px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .background-color-selection {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0 0 0 0;
+    padding: 0;
+
+    .background-color-item {
+      padding: 2px;
+
+      .background-color {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 3px;
+        text-align: center;
+        //width: 25px;
+        height: 20px;
+        border: 1px solid #cbcbdc;
+      }
+    }
+  }
+}

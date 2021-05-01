@@ -1,0 +1,17 @@
+.edit-shipping-modal span.ant-input-group-addon {
+  width: 150px;
+}
+  
+.edit-shipping-modal input[type=number]::-webkit-inner-spin-button, 
+.edit-shipping-modal input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.edit-shipping-modal .ant-input-group-wrapper{
+  margin: 5px 0;
+}
+
+.edit-shipping-modal .ant-row.ant-form-item {
+  margin-bottom: 0;
+}

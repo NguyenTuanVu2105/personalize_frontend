@@ -1,0 +1,31 @@
+stages:
+  - build
+  - deploy
+
+build:
+  artifacts:
+    paths:
+      - build/
+  image: node:14
+  stage: build
+  script:
+    - yarn install
+    - INLINE_RUNTIME_CHUNK=false yarn build
+  only:
+    - master
+    - tags
+
+deploy:
+  image: google/cloud-sdk:alpine
+  stage: deploy
+
+  script:
+    - "echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json"
+    - "gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json"
+    - "gsutil cp -r ./build/* gs://$BUCKET_NAME"
+    - "gsutil -h \"Cache-Control: no-cache\" cp ./build/index.html gs://$BUCKET_NAME"
+    - "gcloud config set project $PROJECT_NAME"
+    - "gcloud compute url-maps invalidate-cdn-cache $CDN_NAME --path=\"/*\""
+  only:
+    - master
+    - tags

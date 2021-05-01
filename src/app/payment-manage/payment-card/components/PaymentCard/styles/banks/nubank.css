@@ -1,0 +1,32 @@
+@import "/nubank.normal.gold.css";
+@import "/nubank.normal.platinum.css";
+
+.card.nubank {
+    background: linear-gradient(to bottom right, #833e85 0%, #521a5a 100%);
+}
+
+.nubank .front {
+    color: #f6d3fd;
+}
+
+.nubank.flipped {
+    background: linear-gradient(to bottom right, #833e85 0%, #1b021f 100%);
+}
+
+.nubank .holderName {
+    top: 190px;
+}
+
+.nubank .expiration {
+    top: 160px;
+    left: 150px;
+}
+
+.nubank .expiration:before {
+    content: "valid thru";
+    text-transform: uppercase;
+    position: absolute;
+    font-size: 7px;
+    opacity: 0.3;
+    top: -10px;
+}

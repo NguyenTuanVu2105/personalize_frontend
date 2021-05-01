@@ -1,0 +1,107 @@
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: fulfillment-hub-frontend
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: fulfillment-hub-frontend
+        tier: frontend
+        track: stable
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: "app"
+                    operator: In
+                    values:
+                      - fulfillment-hub-frontend
+              topologyKey: "kubernetes.io/hostname"
+      containers:
+        - name: fulfillment-hub-frontend
+          image: registry.gitlab.com/uetfulfillmenthub/fulfillment-hub-frontend/production:${CI_COMMIT_SHA}
+          ports:
+            - containerPort: 80
+              name: frontend
+      imagePullSecrets:
+        - name: gitlab-registry
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: fulfillment-hub-frontend
+spec:
+  type: ClusterIP
+  selector:
+    app: fulfillment-hub-frontend
+    tier: frontend
+  ports:
+    - name: frontend
+      protocol: TCP
+      port: 80
+      targetPort: frontend
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/proxy-body-size: 100m
+  name: fulfillment-hub-frontend-ingress
+spec:
+  rules:
+    - host: app.printholo.com
+      http:
+        paths:
+          - backend:
+              serviceName: fulfillment-hub-frontend
+              servicePort: frontend
+            path: /
+  tls:
+    - hosts:
+        - app.printholo.com
+      secretName: app-printholo-com-tls
+# ---
+# apiVersion: autoscaling/v2beta1
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: product-service-${NAMESPACE}
+#   namespace: ${NAMESPACE}
+# spec:
+#   scaleTargetRef:
+#     apiVersion: extensions/v1beta1
+#     kind: Deployment
+#     name: product-service-${NAMESPACE}
+#   minReplicas: 2
+#   maxReplicas: 10
+#   metrics:
+#     - type: Resource
+#       resource:
+#         name: memory
+#         targetAverageValue: 100Mi
+#     - type: Resource
+#       resource:
+#         name: cpu
+#         targetAverageUtilization: 90
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: fulfillment-hub-frontend-pdb
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: fulfillment-hub-frontend

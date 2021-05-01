@@ -1,0 +1,25 @@
+.product-artwork{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed #6db5f1;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.pricing-container {
+  .flex-baseline {
+    display: flex;
+    align-items: baseline;
+  }
+  .ant-pagination.ant-table-pagination {
+    margin-right: 0;
+  }
+}

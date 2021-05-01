@@ -1,0 +1,23 @@
+.policy-agreement-modal {
+  .policy-content {
+    p {
+      font-weight: bold;
+      text-align: justify;
+    }
+  }
+
+  #policy-agreement-checkbox {
+    label {
+      margin-bottom: 0;
+    }
+  }
+
+  .Polaris-Heading {
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+  }
+
+  li {
+    overflow: unset !important;
+  }
+}

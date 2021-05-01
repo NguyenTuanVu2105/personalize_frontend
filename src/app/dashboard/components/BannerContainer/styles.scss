@@ -1,0 +1,43 @@
+@import "../../../../scss/commons/mixins";
+
+.banner-container {
+  background-image: url('../../../../assets/images/banner_1.png'), linear-gradient(to right, #4d6ecc, #ce4789);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  height: 100%;
+  position: relative;
+  box-shadow: var(--p-card-shadow, 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15));
+
+  .info {
+    top: 3em;
+    left: 2em;
+    width: 90%;
+    @include xl {
+      width: 50%;
+    }
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      color: #ffffff;
+      font-size: 2em;
+      font-weight: 600;
+    }
+
+    .description {
+      margin: 15px 0;
+      font-size: 1.1em;
+      color: #ffffff;
+    }
+
+    .action {
+      padding: 13px 8px;
+      border-radius: .3em;
+      font-size: 1.1em;
+      font-weight: bold;
+      background-color: #ffffff;
+      align-self: flex-start;
+    }
+  }
+}

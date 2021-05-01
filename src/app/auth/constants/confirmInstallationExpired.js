@@ -1,0 +1,1 @@
+export const CONFIRM_INSTALLATION_EXPIRED = 9 * 60 * 1000 //miliseconds

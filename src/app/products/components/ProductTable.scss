@@ -1,0 +1,47 @@
+.product-sync-status-info-item {
+  background-color: ghostwhite;
+  width: fit-content;
+  border-radius: 50px;
+  margin: 5px 0 0 0;
+  padding-left: 10px;
+}
+
+.product-image-preview {
+  cursor: pointer;
+}
+
+
+//.artwork-pending::after {
+//  content: "";
+//  background: -webkit-linear-gradient(to right, #2196f3, #f44336, #2196f3);
+//  background: linear-gradient(to left, #2196f3, #f44336, #2196f3);
+//  position: absolute;
+//  right: 0;
+//  left: 0;
+//  height: 2px;
+//  background-size: 400%;
+//  animation: linear-progress-bar-stripes linear infinite 5s;
+//}
+
+
+@keyframes linear-progress-bar-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  25% {
+    background-position: 100% 0;
+  }
+
+  50% {
+    background-position: 200% 0;
+  }
+
+  75% {
+    background-position: 300% 0;
+  }
+
+  100% {
+    background-position: 400% 0;
+  }
+}

@@ -1,0 +1,103 @@
+
+.design-section {
+  min-height: 400px;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+}
+
+.design-section-design-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.design-card {
+  .Polaris-Tabs__Title {
+    font-size: 9pt;
+    padding: 5px;
+  }
+}
+
+.design-button-tabs {
+  .Polaris-ButtonGroup__Item {
+    flex: 1 1 50%;
+
+    .Polaris-Button {
+      min-height: 33px;
+      color: #a0a2a5;
+
+
+      .Polaris-Button__Text {
+        font-size: 9pt;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .active {
+    .Polaris-Button {
+      color: #5C6AC4;
+      border-color: #5C6AC4;
+    }
+  }
+}
+
+.design-button-group {
+  .Polaris-TextField__Input {
+    padding: 2px 1.2rem;
+    min-height: 30px;
+  }
+
+  .Polaris-Select__Content {
+    padding: 2px 1.2rem;
+    min-height: 30px;
+  }
+
+  .Polaris-Button__Content{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .Polaris-TextField__Spinner{
+    display: none;
+  }
+}
+
+.mockup-container {
+  .Polaris-Card {
+    border-radius: 3px;
+    box-shadow: 0 1px 10px rgba(44, 42, 68, .12) !important;
+
+    .Polaris-Card__Header {
+      padding: 1.25rem 1.25rem 0 1.25rem;
+    }
+
+    .Polaris-Tabs__Title {
+      font-weight: bolder;
+    }
+  }
+
+  //.mockup-design-area{
+  //  width:64.66666667%!important;
+  //}
+  //.mockup-background-area{
+  //  width:17.66666667%!important;
+  //}
+  //.mockup-tool-area{
+  //  width:17.66666667%!important;
+  //}
+}
+
+@media all and (min-width: 600px) {
+  .col-half-right {
+    padding-right: 5px;
+  }
+
+  .col-half-left {
+    padding-left: 5px;
+  }
+}

@@ -1,0 +1,25 @@
+.modelLogo {
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.bb-ourocard-black {
+    composes: modelLogo;
+    width: 75px;
+    top: 62px;
+    right: 30px;
+}
+
+.bradesco-prime-black {
+    composes: modelLogo;
+    width: 75px;
+    top: 85px;
+    transform: translate(calc((350px - 75px) / 2), -20px);
+}
+
+.itau-normal-black {
+    composes: modelLogo;
+    width: 75px;
+    top: 15px;
+    left: 20px;
+}

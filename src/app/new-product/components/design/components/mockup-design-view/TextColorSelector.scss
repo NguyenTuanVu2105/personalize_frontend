@@ -1,0 +1,23 @@
+.text-color-selection
+{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0 0 0 0;
+  padding: 0;
+  width: 100%;
+  .text-color {
+    width: 28px;
+    margin: 2px;
+    display: inline-block !important;
+    justify-content: center!important;
+    align-items: center!important;
+    cursor: pointer!important;
+    border-radius: 3px!important;
+    text-align: center!important;
+    //width: 25px;
+    height: 20px!important;
+    border: 1px solid #cbcbdc !important;
+  }
+
+}

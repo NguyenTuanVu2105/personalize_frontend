@@ -1,0 +1,20 @@
+.carousel .control-dots .dot {
+  background-color: black;
+}
+
+.carousel .control-next.control-arrow:before {
+  border-left: 8px solid black;
+}
+
+.carousel .control-prev.control-arrow:before {
+  border-right: 8px solid black;
+}
+
+.carousel .slide {
+  background-color: white;
+}
+
+.carousel.carousel-slider .control-arrow {
+  top: 45%;
+  bottom: 45%;
+}

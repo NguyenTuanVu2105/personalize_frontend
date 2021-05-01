@@ -1,0 +1,8 @@
+version: '3.1'
+
+services:
+  fulfill-hub-frontend:
+    image: frontend
+    restart: always
+    ports:
+      - 80:80

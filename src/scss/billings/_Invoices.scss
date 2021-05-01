@@ -1,0 +1,80 @@
+%base-bg {
+  display: inline-flex;
+  align-items: center;
+  padding: .3rem .8rem;
+  border-radius: 2rem;
+  line-height: 1rem;
+  margin: auto;
+  font-size: 14px
+}
+
+.unpaid-bg {
+  @extend %base-bg;
+  color: #004085;
+  background-color: #cce5ff;
+}
+
+
+.paid-bg {
+  @extend %base-bg;
+  color: #155724;
+  background-color: #d4edda;
+}
+
+.cancelled-bg {
+  @extend %base-bg;
+  color: #721c24;
+  background-color: #f8d7da;
+}
+
+%base-circle {
+  border: .2rem solid #004085;
+  border-radius: 50%;
+  height: .8rem;
+  width: .8rem;
+  margin: 0 .4rem 0 -.3rem;
+  flex-shrink: 0;
+}
+
+.unpaid-circle {
+  @extend %base-circle;
+  border-color: #004085;
+}
+
+.paid-circle {
+  @extend %base-circle;
+  border-color: #155724;
+}
+
+.cancelled-circle {
+  @extend %base-circle;
+  border-color: #721c24;
+}
+
+.horizontal-slash {
+  width: .1em;
+  height: 2.5em;
+  border-right: .16em solid #b2bbc2;
+}
+
+.flex-column-end {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.border-avatar {
+  border: 1.3px solid #EBEBEB;
+  border-radius: 5px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.4;
+}

@@ -1,0 +1,28 @@
+.new-product-description {
+    height: 100%;
+    padding: 1.5rem;
+    border-radius: 3px;
+    box-shadow: 0 1px 10px rgba(44, 42, 68, .12);
+    background-color: #fff;
+
+    li {
+        overflow: unset !important;
+    }
+    p+ul, p+img, p+p {
+        padding-top: 0.5em;
+    }
+}
+
+.edit-description-modal-body {
+
+}
+
+//.new-product-description {
+//    //margin: 0em 0.5em 0 1em;
+//    //height: 97%;
+//    //max-height: 100%;
+//}
+
+.hidden-editor {
+    display: none;
+}

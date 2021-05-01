@@ -1,0 +1,96 @@
+
+.order-details-list {
+  //background-color: #f9fafb;
+  //border-radius: 10px;
+  //padding: 15px;
+  //margin-left: -30px;
+  //border: 1px solid #e9eff4;
+
+  .order-details-list--icon {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color: #677bb5;
+  }
+
+  .pack-details-list--item {
+    background-color: #f9fafb;
+    border-radius: 10px;
+    padding: 15px;
+    margin-left: -30px;
+    border: 1px solid #e9eff4;
+
+    .ant-divider.ant-divider-horizontal {
+      margin: 16px 0;
+    }
+
+    .pack-info {
+      cursor: pointer;
+
+      &:hover {
+        .pack-info--name {
+          color: #647bb5;
+        }
+      }
+
+      .pack-info--name {
+        margin-left: 25px;
+        font-weight: 600;
+        color: #696969;
+        margin-bottom: -10px;
+      }
+
+      .pack-info--status {
+        width: 50%;
+        padding-left: 35px;
+
+        .pack-info--status--item-payment {
+          width: 48%;
+        }
+      }
+    }
+
+    .order-details-list--item {
+      margin-left: 40px;
+
+      .ant-divider.ant-divider-horizontal {
+        margin: 8px 0;
+      }
+
+      .order-details-list--item-preview {
+        height: 65px;
+        border: 1px solid #e9eff4;
+        border-radius: 2px;
+        max-width: 100px;
+      }
+
+      .order-details-list--item-info {
+        margin-left: 20px;
+        width: 17%;
+        min-width: 200px;
+
+        p:first-child {
+          font-size: 16px;
+          color: #518cb5;
+          margin-bottom: 0;
+        }
+
+        p:last-child {
+          color: grey;
+        }
+      }
+
+      .order-details-list--attr {
+        min-width: 130px;
+        width: 32%;
+        padding-left: 10px;
+      }
+
+      .order-details-list-cost {
+        min-width: 280px;
+        width: 32%;
+        margin-right: 20px;
+      }
+    }
+  }
+}

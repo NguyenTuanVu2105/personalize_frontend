@@ -1,0 +1,24 @@
+.bg-grey {
+    background-color: #ECECEC;
+    padding-top: 20px;
+    min-height: 100vh;
+}
+
+.border-register {
+    width: 500px;
+    margin: auto;
+}
+
+.ant-form label {
+    font-size: 15px
+}
+
+.ant-form-item label {
+    margin-bottom: 0px
+}
+
+.err-register {
+    font-size: 15px;
+    color: red;
+    text-align: center;
+}

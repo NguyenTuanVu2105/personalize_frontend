@@ -1,0 +1,30 @@
+
+:root{
+  --tail-width-fix: 90%;
+  --tail-spacing-left-fix: 55%;
+}
+.new-product-step-container {
+  box-shadow: 10px 1px 10px rgba(44, 42, 68, .12);
+  background-color: #fff;
+  z-index: 99;
+
+  .new-product-steps {
+    width: 100%;
+    padding-bottom: 0.5rem;
+
+
+    .steps-title {
+      //margin-bottom: 10px;
+    }
+
+    //.steps-tail {
+    //  width: var(--tail-width-fix) !important;
+    //  left: var(--tail-spacing-left-fix) !important;
+    //}
+    //
+    //.steps-icon::after {
+    //  width: var(--tail-width-fix) !important;
+    //  left: var(--tail-spacing-left-fix) !important;
+    //}
+  }
+}

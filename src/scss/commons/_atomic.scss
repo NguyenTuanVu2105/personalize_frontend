@@ -1,0 +1,236 @@
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.link {
+  &:hover {
+    color: #15cd72;
+  }
+}
+
+.align-center {
+  text-align: center !important;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-middle {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-space-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.width-full {
+  width: 100% !important;
+}
+
+.display-none {
+  display: none;
+}
+
+.p20 {
+  padding: 20px;
+}
+
+.p-t-20 {
+  padding-top: 20px;
+}
+
+.p-r-20 {
+  padding-right: 20px;
+}
+
+
+.m0 {
+  margin: 0px;
+}
+
+.m25 {
+  margin: 25px;
+}
+
+.m5 {
+  margin: 5px;
+}
+
+.m15 {
+  margin: 15px;
+}
+
+.m25 {
+  margin: 25px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.ma15 {
+  margin: auto 15px;
+}
+
+.mt15 {
+  margin-top: 15px
+}
+
+.mt20 {
+  margin-top: 20px
+}
+
+.ml20 {
+  margin-left: 20px
+}
+
+.mb10 {
+  margin-bottom: 10px
+}
+
+.mb20 {
+  margin-bottom: 20px
+}
+
+.mr5 {
+  margin-right: 5px;
+}
+
+.mr20 {
+  margin-right: 20px;
+}
+
+.mr30 {
+  margin-right: 30px
+}
+
+.pb10 {
+  padding-bottom: 10px;
+}
+
+.p5 {
+  padding: 5px;
+}
+
+.p10 {
+  padding: 10px;
+}
+
+.p1em{
+  padding: 1em;
+}
+
+.pt1em{
+  padding-top: 1em;
+}
+
+.pb16 {
+  padding-bottom: 16px;
+}
+
+.pb20 {
+  padding-bottom: 20px;
+}
+
+.pb4 {
+  padding-top: 4px;
+}
+
+.pb1em{
+  padding-bottom: 1em;
+}
+
+.pb2em{
+  padding-bottom: 2em;
+}
+
+.ph1em{
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.p-hor-10 {
+  padding: 0px 10px 0px 10px;
+}
+
+.fs18 {
+  font-size: 18px;
+}
+
+.fs14 {
+  font-size: 14px;
+}
+
+.m20 {
+  margin: 20px auto;
+}
+
+.mb0 {
+  margin-bottom: 0px;
+}
+
+.mb5 {
+  margin-bottom: 5px;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+
+.color-white {
+  color: white;
+}
+
+.auto-m-l {
+  margin-left: auto;
+}
+
+.no-padding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.border-left {
+  border-left: 1px gray solid;
+}

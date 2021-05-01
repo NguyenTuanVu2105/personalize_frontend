@@ -1,0 +1,74 @@
+.order-card:hover {
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 3px 3px rgba(0, 0, 0, 0.22);
+}
+
+.order-card {
+  border-radius: 5px;
+  border: 0.5px solid rgba(0, 0, 0, 0.05);
+  padding: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.order-pack-container {
+  > div {
+    margin: 10px;
+  }
+}
+
+.order-item-container {
+  margin: 15px 0px 15px 0px;
+  width: 100%;
+  padding-bottom: 1.6em;
+  border-bottom: dashed 1px lightgrey;
+}
+
+.order-item-container-rejected {
+  opacity: 0.6;
+}
+
+.item-price-info {
+  white-space: nowrap;
+}
+
+.sell-item-container {
+  margin: 5px;
+}
+
+.status-icon-container {
+  margin: 20px 0px 20px 0px;
+}
+
+.item-variant-title {
+  font-weight: 600!important;
+}
+
+.item-variant-title.rejected {
+  .item-variant-title-text {
+    color: darkred !important;
+    text-decoration: line-through;
+  }
+}
+
+.item-variant-avatar-rejected {
+  opacity: 50%;
+}
+
+
+.pack-heading-title {
+  * {
+    margin-right: 5px;
+  }
+
+  .order-pack-title {
+    font-weight: 500;
+    font-size: 20px;
+  }
+}
+
+.pack-tracking-number {
+  font-size: 14px;
+}
+
+

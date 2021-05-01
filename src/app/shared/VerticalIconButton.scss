@@ -1,0 +1,37 @@
+.vertical-icon-button {
+  border-radius: 3px;
+  //box-shadow: 0 1px 10px rgba(44, 42, 68, .12);
+  background-color: #fff;
+  position: relative;
+  z-index: 99;
+
+  .center {
+    margin: 0;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+.vertical-icon-button.non-disable-icon-button:hover {
+  .Polaris-Button__Text {
+    span {
+      color: #5C6AC4 !important;
+    }
+  }
+}
+
+.disable-icon-button {
+  .Polaris-Button {
+    cursor: not-allowed;
+  }
+}
+
+.non-disable-icon-button {
+  .Polaris-Button {
+    cursor: pointer;
+  }
+}

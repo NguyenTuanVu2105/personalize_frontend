@@ -1,0 +1,119 @@
+.artwork-item {
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  position: relative;
+  font-family: inherit;
+}
+
+.artwork-item-image {
+  position: relative;
+  display: flex;
+  height: 150px;
+  align-items: center;
+  width: 100%;
+  background-size: 10%;
+  opacity: 1;
+}
+
+.artwork-item-image img {
+  display: block;
+  margin: 0 auto;
+  max-height: 120px;
+  max-width: 120px;
+}
+
+.artwork-detail {
+  background: #ffffff;
+  color: #000;
+  padding: 12px;
+  font-size: .90em;
+}
+
+.clearArtwork {
+  display: none;
+}
+
+.label-update {
+  font-weight: 600;
+}
+
+.artwork-detail div {
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.attr-title {
+  color: #7e7e7e;
+  float: left;
+  margin: 0 5px 0 0;
+}
+
+.attr-value {
+  float: left;
+  display: inline-block;
+}
+
+li {
+  overflow: hidden;
+  margin: 0 0 3px;
+}
+
+.artwork-item-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 30px;
+}
+
+.artwork-image-overlay {
+  position: absolute;
+  background-color: rgb(195, 195, 195);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.artwork-item:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.artwork-item:hover {
+  .artwork-image-overlay {
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  .artwork-actions {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+
+.artwork-actions {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.artwork-actions button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.artwork-update-name {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1320px) {
+  .item-holder {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 25px;
+  }
+}

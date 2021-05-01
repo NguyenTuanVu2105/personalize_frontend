@@ -1,0 +1,68 @@
+@import "./variables";
+
+h3 {
+  font-size: 2.4 * $rem;
+  font-weight: 600;
+  line-height: 2.8 * $rem;
+}
+
+@media (min-width: 40 * $em) {
+  h3 {
+    font-size: 2.8 * $rem;
+    line-height: 3.2 * $rem;
+  }
+}
+
+.ant-breadcrumb {
+  a {
+    color: $ink-lighter;
+
+    &:hover, &:active {
+      color: $ink;
+      text-decoration: none;
+    }
+
+  }
+}
+
+.app-header.ant-layout-header, .app-header-responsive.ant-layout-header {
+  a {
+    &:hover {
+      text-decoration: none;
+      color: $indigo !important;
+    }
+  }
+
+  .email-container > * {
+    font-size: 1.4 * $rem !important;
+    color: $ink-light;
+  }
+}
+
+.ant-dropdown-menu-item:hover, .ant-dropdown-menu-submenu-title:hover, .ant-table-row:hover, .ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-thead > tr:hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
+  background-color: unset;
+  background-image: linear-gradient(rgba(223, 227, 232, .3), rgba(223, 227, 232, .3));
+}
+
+.ant-table {
+  .ant-table-thead {
+    .ant-table-header-column {
+      font-weight: 600;
+      color: $ink;
+    }
+  }
+
+  .ant-table-tbody {
+    tr {
+      td, td:nth-child(2), td:nth-child(3) {
+        a {
+          color: $blue;
+          //font-weight: 600;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

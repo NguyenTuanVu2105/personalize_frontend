@@ -1,0 +1,35 @@
+.shadow-icon-button {
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 1px 10px rgba(44, 42, 68, .12);
+  //cursor: pointer;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 0.75rem;
+  position: relative;
+  z-index: 4;
+  .center {
+    margin: 0;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+.shadow-icon-button.non-disable-icon-button {
+  &:hover {
+    color: #5C6AC4 !important
+  }
+}
+
+.shadow-icon-button.disable-icon-button {
+  cursor: not-allowed;
+  //border: 1px solid;
+}
+
+.shadow-icon-button.non-disable-icon-button {
+  cursor: pointer;
+}

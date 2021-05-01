@@ -1,0 +1,81 @@
+.order-history-container {
+  .ant-collapse-borderless {
+    background-color: #fafafa;
+    border: 0;
+  }
+
+  .ant-collapse-header[role="button"] {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+
+  .ant-collapse-header[role="button"]:hover {
+    text-decoration: underline;
+  }
+
+  .ant-collapse-borderless > .ant-collapse-item {
+    border-bottom: 0;
+  }
+
+  .ant-timeline-item {
+    padding-bottom: 0px;
+  }
+
+  .ant-timeline-item-tail {
+    top: 0;
+  }
+
+  .ant-timeline-item-last > .ant-timeline-item-tail {
+    height: 30px;
+    display: block;
+  }
+
+  .ant-collapse .ant-collapse-item-disabled > .ant-collapse-header,
+  .ant-collapse .ant-collapse-item-disabled > .ant-collapse-header > .arrow {
+    color: rgba(0, 0, 0, 0.85);;
+    cursor: text;
+    text-decoration: none;
+  }
+
+  .ant-collapse .ant-collapse-item-active .ant-collapse-header {
+    background-color: #f9fafb;
+    // margin: 20px 0;
+  }
+
+  .ant-timeline-item-head.ant-timeline-item-head-blue {
+    position: relative;
+    top: 22px;
+  }
+
+  .ant-timeline-item-head.ant-timeline-item-head-green {
+    position: relative;
+    top: 33px;
+    display: none;
+  }
+
+  .ant-timeline-item.timeline-date {
+    overflow: visible;
+  }
+
+  .timeline-date .text-uppercase {
+    padding-left: 12px;
+    position: relative;
+    top: 6px;
+  }
+
+  .day-history .ant-divider.ant-divider-horizontal {
+    margin: 0;
+    width: 110%;
+    left: -5%;
+    // margin-left: -20px;
+    // right: -30px;
+  }
+
+  .not-first-day .timeline-date.ant-timeline-item {
+    padding-top: 20px;
+  }
+
+  .ant-collapse > .ant-collapse-item.ant-collapse-no-arrow > .ant-collapse-header {
+    padding-left: 30px !important;
+  }
+}

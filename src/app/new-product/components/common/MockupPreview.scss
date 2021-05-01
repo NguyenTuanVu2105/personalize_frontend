@@ -1,0 +1,207 @@
+//.mockup-container {
+//  background-color: var(--p-surface-foreground, white);
+//}
+
+.mockup-image-preview:hover {
+  border: blue 5px;
+
+
+  .frame-wrapper {
+    display: block;
+  }
+}
+
+.moveable-control-box.invisible {
+  visibility: unset !important;
+  opacity: 0;
+  z-index: 3000 !important;
+}
+
+.moveable-control-box {
+  z-index: 4000 !important;
+}
+
+
+.moveable-control-box{
+  .moveable-rotation{
+    border-color: #42c540 !important;
+    background-color: #c0ffbf !important;
+  }
+
+  .moveable-direction{
+    border-color: #c0ffbf !important;
+    background-color: #42c540 !important;
+  }
+
+  .moveable-line{
+    background-color: #42c540 !important;
+  }
+}
+
+.mockup-image-preview {
+  overflow: hidden;
+  width: 8rem;
+  position: relative;
+
+  .artwork-wrapper {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    top: 2.45rem;
+    width: 100%;
+  }
+
+  .frame-wrapper {
+    display: block;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%233F4EAEFF' stroke-width='6' stroke-dasharray='10%2c 15' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+
+    .print-area-note {
+      margin-top: 8px;
+      margin-left: 12px;
+      color: #4153ae;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 1.6rem;
+      bottom: 0;
+    }
+  }
+
+
+  .hover-resize:hover {
+    -webkit-box-shadow: 0px 0px 13px 7px #999999;
+    box-shadow: 0px 0px 13px 7px #999999;
+    border-radius: 50%;
+  }
+
+  .background-wrapper {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+.design-wapper-4 {
+  .position-button-area {
+    .Polaris-ButtonGroup {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.position-button-area {
+  .Polaris-ButtonGroup {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .Polaris-Button {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+  }
+
+  .button-align {
+    width: 22px;
+    height: 22px;
+  }
+
+  .Polaris-Icon {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.align-left {
+  // height: 14px;
+  // width: 1px;
+  color: black;
+  border: 1px solid white;
+  border-left: 1px solid #637381;
+}
+
+.align-right {
+  // height: 14px;
+  // width: 1px;
+  border: 1px solid white;
+  color: black;
+  border-right: 1px solid #637381;
+}
+
+.align-top {
+  // height: 14px;
+  // width: 1px;
+  border: 1px solid white;
+  color: black;
+  border-top: 1px solid #637381;
+}
+
+.align-bottom {
+  // height: 14px;
+  // width: 1px;
+  border: 1px solid white;
+  color: black;
+  border-bottom: 1px solid #637381;
+}
+
+.align-horizon-right {
+  border: 1px solid white;
+  color: black;
+  border-right: 1px solid #637381;
+}
+
+.align-horizon-left {
+  border: 1px solid white;
+  color: black;
+  // border-left: 1px solid #637381;
+}
+
+.align-horizon-up {
+  border: 1px solid white;
+  color: black;
+  // border-top: 1px solid #637381;
+}
+
+.align-horizon-down {
+  border: 1px solid white;
+  color: black;
+  border-bottom: 1px solid #637381;
+  width: 10px;
+}
+
+.align-middle {
+  .Polaris-Icon {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.align-fill-right {
+  // border: 1px solid white;
+  color: black;
+  // border-right: 1px solid #637381;
+}
+
+.align-fill-left {
+  // border: 1px solid white;
+  color: black;
+  // border-right: 1px solid #637381;
+}
+
+.align-fill {
+  border: 1px solid #637381;
+}
+
+.align-fit-up {
+  border: 1px solid #637381;
+  color: black;
+  border-bottom: 0;
+  width: 10px;
+}
+
+.align-fit-down {
+  border: 1px solid #637381;
+  color: black;
+  border-top: 0;
+  width: 10px;
+}
