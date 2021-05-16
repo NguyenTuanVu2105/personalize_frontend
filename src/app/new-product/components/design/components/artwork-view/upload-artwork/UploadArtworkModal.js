@@ -408,6 +408,7 @@ const UploadArtworkModal = (props) => {
                     <Col span={19} className="col-same-height modal-upload-content">
                         <div className={keySelectedTab === tabs[0].panelID ? "" : "d-none"}>
                             <DefaultArtwork
+                                side_id={side_id}
                             />
                         </div>
                         <div className={keySelectedTab === tabs[1].panelID ? "" : "d-none"}>

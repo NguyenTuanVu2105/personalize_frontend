@@ -35,6 +35,7 @@ const sampleProducts = createArrayWithNEmptyObject()
 // }
 
 const ChooseProduct = (props) => {
+    const {disibleChangeStep, setNewProduct} = props
     const [categoryId, setCategoryId] = useState(getLocalStorage(LOCALSTORAGE_KEY.SELECTED_CATEGORY, "0"))
     const [categories, setCategories] = useState(null)
     const [allProducts, setAllProducts] = useState({})
@@ -92,15 +93,16 @@ const ChooseProduct = (props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    const onClickProduct = (id) => {
+    const onClickProduct = async (id) => {
         let product = {}
         product.userProducts = []
         product.variants = []
         product.shops = []
         product.abstract_product_id = id
         product.abstract = null
-        product.step = 1
-        context.setProduct(product)
+        await context.setProduct(product)
+        console.log(id)
+        setNewProduct()
     }
 
     const onClickCategory = async (id) => {
@@ -177,9 +179,11 @@ const ChooseProduct = (props) => {
                         // boxShadow: '6px 5px 5px 1px #ccc',
                         backgroundColor: "#ffffff",
                     }}>
-                        <div className='col-6'>
-                            <HomeButton/>
-                        </div>
+                        {
+                            !disibleChangeStep &&  <div className='col-6'>
+                                <HomeButton/>
+                            </div>
+                        }
                         <div className='col-6'>
                             <div className='ph1em' style={{paddingRight: "0.75rem"}}>
                                 <Autocomplete options={[]} textField={textField}/>

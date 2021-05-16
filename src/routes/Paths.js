@@ -5,7 +5,7 @@ const basePath = getReactEnv('USER_BASE_PATH')
 const Paths = {
     HomePage: '/',
     UserPage: `${basePath}`,
-    NewProduct: `${basePath}/products/new`,
+    NewProduct: `/buyer/products/design`,
     ListProductsByShop: (shopId) => `${basePath}/store/${shopId || ':shopId'}/list`,
     ListProducts: `${basePath}/products`,
     ListShop: () => `${basePath}/stores`,

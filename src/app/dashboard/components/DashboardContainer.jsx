@@ -5,7 +5,7 @@ import FinancialCardContainer from './FinancialCardContainer'
 import ChartContainer from './ChartContainer'
 import TimeSelector from './TimeSelector'
 import {getAnalytics, getBillingAnalytics} from '../../../services/api/dashboard'
-import {Spin} from 'antd'
+import {Card, Checkbox, Input, Spin} from 'antd'
 import UserPageContext from '../../userpage/context/UserPageContext'
 import {DisplayText, Heading, TextContainer} from '@shopify/polaris'
 import {produceChartjsData} from '../helper/chartDataHandling'
@@ -158,6 +158,16 @@ function DashboardContainer() {
                         </div>
                     </div>
                     <Spin spinning={loading} wrapperClassName={"page-main-content"}>
+                        <Card title={<b>Personalize Design</b>} className={'m10'}>
+                            <div className={"p10 m5"}>
+                                <span style={{fontSize: '1.5rem'}}> Allow to  push personalize design to Shopify</span>&nbsp;
+                                <Checkbox></Checkbox>
+                            </div>
+                            <div className={"p10 m5"}>
+                                <span style={{fontSize: '1.5rem'}}> Price for sell increase each product</span> &nbsp;
+                                <Input defaultValue="50" style={{width: '75px'}} suffix="%" />
+                            </div>
+                        </Card>
                         <TextContainer>
                             <div style={{display: 'flex', justifyContent: 'space-between'}}>
                                 <Heading>Fulfillment status</Heading>

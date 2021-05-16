@@ -92,7 +92,6 @@ const ProductList = (props) => {
     }, [products])
 
     return (
-
         <div className="product-list-container full-height" id="listProduct">
             <div id="topList"/>
             <List
@@ -199,7 +198,7 @@ const ProductList = (props) => {
                                                                     fullWidth={true}
                                                                     onClick={() => handleClickProduct(product.id)}
                                                                 >
-                                                                    Create
+                                                                    Choose
                                                                 </Button>
                                                             </div>
                                                         </div>

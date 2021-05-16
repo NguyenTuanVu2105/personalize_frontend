@@ -1,7 +1,7 @@
-import {createAuthApiRequest} from "./index"
+import {createAuthApiRequest, createApiRequest} from "./index"
 
 export const getAllFont = () => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: "/seller/font/",
         method: "GET"
     })

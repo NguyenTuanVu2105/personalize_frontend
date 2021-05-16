@@ -1,5 +1,6 @@
 export const getMockupInfoSide = (abstract, sideId, currentVariant) => {
     if (!currentVariant) return null
+    if (!abstract) return null
     // console.log("currentVariant")
     // console.log(currentVariant)
     // console.log(abstract)
@@ -11,6 +12,7 @@ export const getMockupInfoSide = (abstract, sideId, currentVariant) => {
 
 export const getMockupInfo = (abstract, currentVariant) => {
     if (!currentVariant) return null
+    if (!abstract) return null
     const mockupInfoId = currentVariant.mockup_info
     return abstract.mockup_infos.find(info => info.id === mockupInfoId)
 }

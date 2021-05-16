@@ -17,9 +17,9 @@ const CategoryListSideBar = (props) => {
     }
     return (
         <div className={"category-list-sidebar"}>
-            <div className="ph1em">
-                <ChangeStepContainer/>
-            </div>
+            {/*<div className="ph1em">*/}
+            {/*    <ChangeStepContainer/>*/}
+            {/*</div>*/}
             {categories && selectedCategoryId ?
             <Menu
                 onClick={onClickItem}

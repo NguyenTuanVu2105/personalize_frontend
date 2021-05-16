@@ -1,4 +1,4 @@
-import {createAuthApiRequest} from './index'
+import {createAuthApiRequest, createApiRequest} from './index'
 import {getLocalStorage} from '../storage/localStorage'
 import {COOKIE_KEY} from '../storage/sessionStorage'
 import {getReactEnv} from '../env/getEnv'
@@ -23,7 +23,7 @@ export const getAllArtworkWithDefault = (page, limit = 10, searchQuery, size, di
     // if (is_active) params.is_active = is_active
     if (display !== "-1") params.status = display
     if (ordering) params.ordering = ordering
-    return createAuthApiRequest({
+    return createApiRequest({
         url: `/seller/artworks/list_with_default/`,
         method: 'get',
         params: params
@@ -39,7 +39,7 @@ export const cloneArtworkDefault = (data) => {
 }
 
 export const artworkCheck = (data) => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: '/seller/artwork-check/',
         data,
         method: 'POST'
@@ -96,10 +96,6 @@ export const updateChunkArtwork = ({artworkId, file, onSuccess, onError, onProgr
 
 export const uploadChunk = ({file, onSuccess, onError, onProgress, target, mergeTarget, mergeTargetMethod, attachedData}) => {
     const headers = {}
-    const token = getLocalStorage(COOKIE_KEY.TOKEN)
-    headers['Authorization'] = `Bearer ${token}`
-    const refresh_token = getLocalStorage(COOKIE_KEY.REFRESH_TOKEN)
-    headers['x-refresh-token'] = refresh_token
     const xhr = new Resumable({
         target: target,
         mergeTarget: mergeTarget,

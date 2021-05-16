@@ -1,7 +1,7 @@
-import {createAuthApiRequest} from "./index"
+import {createAuthApiRequest, createApiRequest} from "./index"
 
 export const getProductStatistic = async () => {
-    return createAuthApiRequest({
+    return createApiRequest({
         method: "GET",
         url: "/production/statistic/all/"
     })

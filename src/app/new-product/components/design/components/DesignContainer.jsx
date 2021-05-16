@@ -6,6 +6,8 @@ import NewProductDesignContext from '../context/NewProductDesignContext'
 import {getMockupInfo} from '../../../helper/getMockupInfo'
 import {Button, Card, RangeSlider, Tabs, TextField} from "@shopify/polaris"
 import "./DesignContainer.scss"
+import {Drawer, Input, InputNumber} from "antd"
+
 import {
     faArrowDown,
     faArrowLeft,
@@ -66,7 +68,7 @@ const DesignContainer = (props) => {
     } = useContext(NewProductDesignContext)
 
     const [selectedSide, setSelectedSide] = useState(0)
-
+    const [visible, setVisible] = useState(false)
     const sideData = product.abstract.sides[selectedSide]
     const minimumDPI = sideData ? sideData.constraints.minimum_dpi : null
     const sideFusionSize = sideData ? sideData.fusion_size.artwork_fusion_size : null
@@ -101,6 +103,7 @@ const DesignContainer = (props) => {
 
     const [backGroundColorVisible, setBackGroundColorVisible] = useState(true)
 
+    const [listSize, setListSize] = useState([])
 
     useEffect(() => {
         let result = []
@@ -983,6 +986,19 @@ const DesignContainer = (props) => {
         )
     }
 
+    const handleChoseSize = () => {
+        setListSize(Object.keys(product.attributes).filter(x => product.attributes[x].length > 1))
+        setVisible(true)
+    }
+    const onClose = () => {
+        setVisible(false);
+    }
+    const handleAddBasket = () => {
+        const listSize = Object.keys(product.attributes).filter(x => product.attributes[x].length > 1)
+        console.log(listSize)
+        console.log(product.variants)
+    }
+
     return (
         <div className="view-container w-100">
             <div className="mockup-container p1em">
@@ -1110,8 +1126,7 @@ const DesignContainer = (props) => {
                                         </Row>
                                         <AddLayer isDisable={viewState === VIEW_STATE.PREVIEW}/>
                                         {
-                                            currentNumberArtworks > 0
-                                            && (
+                                            currentNumberArtworks > 0 ? (
                                                 <div>
                                                     <DragDropContext
                                                         onDragStart={onDragStart}
@@ -1183,23 +1198,65 @@ const DesignContainer = (props) => {
                                                         <b>Layer: </b>{currentNumberArtworks}/{MAX_LAYER}
                                                     </div>
                                                 </div>
-                                            )
+                                            ) : (<div
+                                                className="step-drag-layer"
+                                                style={{
+                                                    height: `${maxHighLayerList}px`,
+                                                    overflowY: "auto",
+                                                    paddingLeft: 4,
+                                                    paddingRight: 4
+                                                }}
+                                            />)
                                         }
+
+                                        <div className={'button-choose-size'}>
+                                            <Button onClick={handleChoseSize} primary size={'large'} fullWidth={true}> Choose
+                                                Size/Quantity</Button>
+                                        </div>
                                     </div>
                                 }
-                            </Col>
-                        </Row>
-                    </Col>
-                    <Col span={24}>
-                        <Row>
-                            <Col span={24} className={'mt-4'}>
-                                {/*<ProductDescription/>*/}
                             </Col>
                         </Row>
                     </Col>
                 </Row>
             </div>
             {preloadFont()}
+            <Drawer
+                title={"Choose Size"}
+                placement="right"
+                closable={true}
+                width={400}
+                onClose={onClose}
+                visible={visible}
+            >   {listSize.length > 1 ? (
+                <></>
+            ) : (
+                <>
+                    {listSize.map(attribute_name => {
+                        const variants = product.variants.map(x => {
+                            const attribute_value = x.abstract.attributes_value.find(x => x.attribute_name === attribute_name).label
+                            return {
+                                attribute_value: attribute_value,
+                                variant_id: x.abstract_variant
+                            }
+                        })
+
+                        return (<div>
+                            {variants.map(variant => (
+                                <Row className="p5 mb-15 row-same-height attribute-quantity">
+                                    <Col className="d-flex flex-center" span={16}><b style={{fontSize:"1.75rem"}}>{variant.attribute_value}</b></Col>
+                                    <Col span={8}><InputNumber size='large' min={0}
+                                                               defaultValue={0}></InputNumber></Col>
+                                </Row>
+                            ))}
+                        </div>)
+                    })}
+                </>
+            )}
+            <div className="button-add-basket">
+                <Button primary onClick={handleAddBasket} fullWidth={true} size={'large'}>Add to Basket</Button>
+            </div>
+            </Drawer>
         </div>
     )
 }

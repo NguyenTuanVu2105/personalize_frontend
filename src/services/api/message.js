@@ -1,4 +1,4 @@
-import {createAuthApiRequest} from './index'
+import {createAuthApiRequest, createApiRequest} from './index'
 
 export const getMessages = (page, limit) => {
     return createAuthApiRequest({
@@ -26,7 +26,7 @@ export const readAllMessages = () => {
 }
 
 export const getUnreadMessageCount = () => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: `/message/unread_count/`,
         method: `get`,
     })

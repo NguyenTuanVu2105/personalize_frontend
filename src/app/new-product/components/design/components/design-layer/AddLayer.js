@@ -12,6 +12,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {errorLimitLayer} from "../artwork-view/upload-artwork/constant"
 import NotAllowDiv from "../../../common/NotAllowDiv"
 import textIcon from "../../../../../../assets/images/textWhite.svg"
+import ShowProductModal from "../personalize/ShowProductModal";
 
 
 const MAX_LAYER = 10
@@ -43,7 +44,7 @@ const AddLayer = ({isDisable}) => {
 
     const [curProduct, setCurProduct] = useState(null)
     const [curSideLayer, setCurSideLayer] = useState(null)
-
+    const [productVisible, setProductVisible] = useState(false)
 
     useEffect(() => {
         if (curProduct) {
@@ -177,6 +178,7 @@ const AddLayer = ({isDisable}) => {
                         primary={true}
                         size={"slim"}
                         fullWidth={true}
+                        onClick={() => setProductVisible(true)}
                     >
                         Product
                     </Button>
@@ -208,6 +210,7 @@ const AddLayer = ({isDisable}) => {
                     </Button>
                 </div>
             </div>
+
             <UploadArtworkModal
                 visible={modalVisible}
                 setVisible={setModalVisible}
@@ -219,6 +222,11 @@ const AddLayer = ({isDisable}) => {
                 maxArtwork={MAX_LAYER}
                 currentNumberArtworks={currentNumberLayers}
             />
+            <ShowProductModal
+                visible={productVisible}
+                setVisible={setProductVisible}
+            >
+            </ShowProductModal>
         </div>
     )
 }

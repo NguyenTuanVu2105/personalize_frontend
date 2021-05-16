@@ -39,30 +39,6 @@ const UserArtwork = (props) => {
     const {product} = useContext(NewProductContext)
     const [loading, setLoading] = useState(false)
 
-
-    const _fetchArtworks = async (page, query, size, activeStatus = ARTWORK_STATUS_CODES.ACTIVE) => {
-        setLoading(true)
-        const displayStatusQuery = activeStatus === ALL_QUERY_INDEX ? SERVER_ALL_QUERY_INDEX : activeStatus
-        const ordering = "-last_used_time"
-        // const _sizes = !isEmpty(size)  ? size.map((s) => `${s.width}x${s.height}`).join(",") : constraints.allowed_sizes.map((s) => `${s.width}x${s.height}`).join(",")
-        const artworksRes = await getAllArtworkWithDefault(page, PAGE_SIZE, query, [], displayStatusQuery, null, null, ordering, true, side_id)
-        if (!artworksRes.success)
-            return
-        const data = artworksRes.data
-        data.results = data.results.map(artwork => ({
-            ...artwork,
-            originWidth: artwork.width,
-            originHeight: artwork.height
-        }))
-        _setArtworks(data.results)
-        setLoading(false)
-    }
-
-    useEffect(() => {
-        _fetchArtworks(1)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
     const {
         getRootProps,
         getInputProps,
@@ -138,7 +114,6 @@ const UserArtwork = (props) => {
 
     return (
         <div>
-            User
             <TextContainer>
                 <div
                     className='disable-more-filters px-2'
@@ -150,15 +125,6 @@ const UserArtwork = (props) => {
                             <p>Drag and drop your artwork here, or click to select artwork files</p>
                         </StyledDropzone>
                     </div>
-                    <InfiniteScroll
-                        initialLoad={false}
-                        pageStart={0}
-                        loadMore={() => {
-                            console.log(1)
-                        }}
-                        hasMore={true}
-                        useWindow={false}
-                    >
                         <Spin spinning={loading}>
                             <div className="row noselect px-2 mt-3">
                                 {_artworks.map((artwork, index) => {
@@ -213,20 +179,20 @@ const UserArtwork = (props) => {
                                                         <p>
                                                             {`${artwork.originWidth} x ${artwork.originHeight} (px)`}
                                                         </p>
-                                                        <em>
-                                                            {artwork.is_default ?
-                                                                (isSelected ? `Click to deselect` :
-                                                                    <div
-                                                                        style={{color: 'darkblue'}}>PrintHolo's
-                                                                        Artwork</div>)
-                                                                : (selectedCount === 1
-                                                                    ? `Selected ${selectedCount} time`
-                                                                    : selectedCount > 1
-                                                                        ? `Selected ${selectedCount} times`
-                                                                        : isSelected
-                                                                            ? `Click to deselect`
-                                                                            : `Used in ${artwork.total_created_product} products`)}
-                                                        </em>
+                                                        {/*<em>*/}
+                                                        {/*    {artwork.is_default ?*/}
+                                                        {/*        (isSelected ? `Click to deselect` :*/}
+                                                        {/*            <div*/}
+                                                        {/*                style={{color: 'darkblue'}}>PrintHolo's*/}
+                                                        {/*                Artwork</div>)*/}
+                                                        {/*        : (selectedCount === 1*/}
+                                                        {/*            ? `Selected ${selectedCount} time`*/}
+                                                        {/*            : selectedCount > 1*/}
+                                                        {/*                ? `Selected ${selectedCount} times`*/}
+                                                        {/*                : isSelected*/}
+                                                        {/*                    ? `Click to deselect`*/}
+                                                        {/*                    : `Used in ${artwork.total_created_product} products`)}*/}
+                                                        {/*</em>*/}
                                                     </div>
                                                 </div>
                                             </Tooltip>
@@ -235,8 +201,6 @@ const UserArtwork = (props) => {
                                 }
                             </div>
                         </Spin>
-
-                    </InfiniteScroll>
                     {
                         refSelection.current && elRefs.current &&
                         <Selection target={refSelection.current} elements={elRefs.current}

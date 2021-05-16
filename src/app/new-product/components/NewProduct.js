@@ -3,12 +3,10 @@ import NewProductContext from '../context/NewProductContext'
 import './NewProduct.scss'
 import {withRouter} from 'react-router-dom'
 import ProductDesignContainer from './design/ProductDesignContainer'
-import {NORMAL_STEPS, SAMPLE_PRODUCT_CUSTOM_STEPS} from '../static/steps'
 import SubmitModal from './choose-shop/SubmitModal'
-import {DUPLICATE, SAMPLE_PRODUCT_CUSTOM} from "../constants/newproductMode"
 
 const NewProduct = (props) => {
-    const {isSubmit, setIsSubmit, modeData} = useContext(NewProductContext)
+    const {isSubmit, setIsSubmit} = useContext(NewProductContext)
 
     useEffect(() => {
         document.addEventListener("keydown", handleKeyDown, false);
@@ -36,35 +34,13 @@ const NewProduct = (props) => {
         }
     }
 
-    const {step} = useContext(NewProductContext)
-
-    // const
-
-    const renderStepContent = () => {
-        switch (modeData.mode) {
-            case DUPLICATE:
-                return (
-                    <div className="steps-content">
-                        <ProductDesignContainer/>
-                    </div>
-                )
-            case SAMPLE_PRODUCT_CUSTOM:
-                return (
-                    <div className="steps-content">{SAMPLE_PRODUCT_CUSTOM_STEPS[step].content}</div>
-                )
-            default:
-                return (
-                    <div className="steps-content">{NORMAL_STEPS[step].content}</div>
-                )
-        }
-    }
 
     return (
         <div className="new-product-container">
             {
-                renderStepContent()
+                <ProductDesignContainer/>
             }
-            <SubmitModal visible={isSubmit} setVisible={setIsSubmit}/>
+            {/*<SubmitModal visible={isSubmit} setVisible={setIsSubmit}/>*/}
         </div>
     )
 }

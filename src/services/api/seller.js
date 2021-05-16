@@ -1,4 +1,4 @@
-import {createAuthApiRequest} from './index'
+import {createAuthApiRequest, createApiRequest} from './index'
 import _ from 'lodash'
 
 
@@ -132,7 +132,7 @@ export const deleteShopifyUserProduct = (data, userProductId) => {
 }
 
 export const retrieveDefaultCurrency = () => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: `/currency/default/`,
         method: 'GET'
     })

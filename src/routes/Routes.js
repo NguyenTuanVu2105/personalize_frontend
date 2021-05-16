@@ -101,15 +101,15 @@ const routes = [
                 component: ShopAccessWarningPage
             },
             {
+                path: Paths.NewProduct,
+                exact: true,
+                component: NewProductContainer
+            },
+            {
                 path: Paths.UserPage,
                 component: UserPageContainer,
 
                 routes: [
-                    {
-                        path: Paths.NewProduct,
-                        exact: true,
-                        component: NewProductContainer
-                    },
                     {
                         path: Paths.DuplicateProduct(),
                         component: DuplicateProductContainer

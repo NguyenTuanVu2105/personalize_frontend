@@ -1,7 +1,7 @@
-import {createAuthApiRequest} from './index'
+import {createAuthApiRequest, createApiRequest} from './index'
 
 export const getCategories = (page = 1, limit = 10, isActive = true) => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: `/abstract/product-categories/`,
         method: 'get',
         params: {page, limit, is_active: isActive, ordering: "sort_index"}
@@ -9,35 +9,42 @@ export const getCategories = (page = 1, limit = 10, isActive = true) => {
 }
 
 export const getProducts = () => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: `/abstract/products/`,
         method: 'get',
     })
 }
 
 export const getAProduct = (productId) => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: `/abstract/products/${productId}/`,
         method: 'get',
     })
 }
 
+export const getDefaultProduct = (productId) => {
+    return createApiRequest({
+        url: `/abstract/products/get_default/`,
+        method: 'get',
+    })
+}
+
 export const getDetailCost = (productId) => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: `/abstract/products/${productId}/cost_details/`,
         method: 'get',
     })
 }
 
 export const getProductsByCategory = (category) => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: `/abstract/product-categories/${category}/`,
         method: 'get',
     })
 }
 
 export const getProductsByCategoryWithLocalstorage = async (category) => {
-    const resData = await createAuthApiRequest({
+    const resData = await createApiRequest({
         url: `/abstract/product-categories/${category}/`,
         method: 'get',
         autoRedirect: false
@@ -65,14 +72,14 @@ export const getProductVariants = (product_id) => {
 }
 
 export const getAbstractProductVariant = (abstract_product) => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: `/abstract/products/${abstract_product}/`,
         method: 'get',
     })
 }
 
 export const getMockupProductById = (id) => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: `/seller/user-product/${id}/mockups/`,
         method: 'get',
     })
