@@ -19,8 +19,7 @@ const ProductDesignContainer = function () {
         product,
         setProduct,
         isProductValid,
-        fetchCost,
-        reloadVariants
+        fetchCost
     } = useContext(NewProductContext)
     const {setLoading} = useContext(AppContext)
 
@@ -111,7 +110,6 @@ const ProductDesignContainer = function () {
             if (_.isEmpty(product.attributes)) {
                 if (countReload < MAX_RELOAD) {
                     logErrorProduct(product.abstract_product_id, `Reloaded ${countReload} time(s)`).then()
-                    reloadVariants(product)
                     setCountReload(countReload + 1)
                 }
             }
@@ -121,12 +119,12 @@ const ProductDesignContainer = function () {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [product.attributes])
 
-    const setNewProduct = async () => {
+    const setNewProduct = async (product_id=null) => {
         let isAddBackground = true
-        if (!product.abstract) {
+        if (!product.abstract || product_id) {
             setLoading(true)
-            const res = await getAProduct(product.abstract_product_id)
-            console.log(res)
+            const res = await getAProduct(product_id || product.abstract_product_id)
+            if (product_id) product.abstract_product_id = product_id
             product.abstract = res.data
 
             isAddBackground = createNewProduct(product, isAddBackground)
@@ -163,7 +161,6 @@ const ProductDesignContainer = function () {
         }
 
         // reloadVariants(product)
-
         const colorAttribute = product.abstract.child_attributes.find(x => x.name.includes('Color'))
         let colorValue = null
         if (colorAttribute) {
@@ -173,6 +170,7 @@ const ProductDesignContainer = function () {
             return variant.attributes_value.some(x => x.value === colorValue)
         }) || product.abstract.abstract_product_variants[0]
         const useArtwork = product.abstract && product.abstract.sides.length > 0
+        console.log("design", product.abstract)
         useArtwork && setDesignState({
             currentSideId: product.abstract.sides[0].id,
             currentVariant: currentVariant,

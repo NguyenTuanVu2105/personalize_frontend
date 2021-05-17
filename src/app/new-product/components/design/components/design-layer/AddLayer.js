@@ -161,6 +161,7 @@ const AddLayer = ({isDisable}) => {
             errorLimitLayer(MAX_LAYER, currentNumberLayers)
             clearTriggerRerendering()
         } else {
+            console.log(designState)
             const sideId = designState.currentSideId
             const lastLayerIndex = appendTextToSide(sideId, designState.currentProductIndex)
             setDesignState({currentLayerIndex: lastLayerIndex})

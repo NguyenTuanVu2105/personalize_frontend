@@ -8,8 +8,9 @@ const ShowProductModal = (props) => {
     const {
         setNewProduct
     } = useContext(NewProductDesignContext)
-    const chooseProduct = async () => {
-        await setNewProduct()
+
+    const chooseProduct = async (product_id) => {
+        setNewProduct(product_id)
         setVisible(false)
     }
     return (

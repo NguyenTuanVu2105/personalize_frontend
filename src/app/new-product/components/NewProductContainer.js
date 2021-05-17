@@ -318,16 +318,17 @@ const NewProductContainer = function (props) {
     }
 
     const setProduct = (values) => {
-        // console.log("setProduct - values", values)
         _setProduct(pro => {
             const newProduct = {...pro, ...values}
             setProductInStorage(newProduct).then()
+            console.log("setProduct - values", newProduct)
             return newProduct
         })
     }
 
     const appendTextToSide = (sideId, curProductIndex) => {
         const currentProduct = product.userProducts[curProductIndex]
+        console.log(currentProduct)
         currentProduct.previewUpdated = false
         const curSide = currentProduct.sideLayers.find((s) => s.side.id === sideId)
         const tmpLayers = [...curSide.layers]

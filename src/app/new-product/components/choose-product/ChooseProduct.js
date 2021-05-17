@@ -94,15 +94,7 @@ const ChooseProduct = (props) => {
     }, [])
 
     const onClickProduct = async (id) => {
-        let product = {}
-        product.userProducts = []
-        product.variants = []
-        product.shops = []
-        product.abstract_product_id = id
-        product.abstract = null
-        await context.setProduct(product)
-        console.log(id)
-        setNewProduct()
+        setNewProduct(id)
     }
 
     const onClickCategory = async (id) => {
