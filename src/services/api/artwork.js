@@ -31,7 +31,7 @@ export const getAllArtworkWithDefault = (page, limit = 10, searchQuery, size, di
 }
 
 export const cloneArtworkDefault = (data) => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: '/seller/artworks/clone_default/',
         data,
         method: 'POST'
@@ -112,7 +112,7 @@ export const uploadChunk = ({file, onSuccess, onError, onProgress, target, merge
 }
 
 export const cloneUserArtwork = (id, data) => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: `/seller/artworks/${id}/clone/`,
         data,
         method: 'POST'

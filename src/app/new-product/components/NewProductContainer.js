@@ -660,6 +660,40 @@ const NewProductContainer = function (props) {
         return error
     }
 
+    const updateAttributes = (selectedAttributes, instantaneousProduct) => {
+        const commonProduct = instantaneousProduct ? instantaneousProduct : product
+        // console.log("selectedAttributes", selectedAttributes)
+        const selectedAttributeValues = Object.values(selectedAttributes).reduce((result, values) => result.concat(values), [])
+        const selectedAttributeValueIndexes = {}
+        const selectedAttributeValueLength = selectedAttributeValues.length
+        Object.values(selectedAttributes).forEach((values, attrIndex) => {
+            const boost = Math.pow(selectedAttributeValueLength, attrIndex)
+            values.forEach((value, valueIndex) => {
+                // console.log(value, valueIndex, boost, valueIndex * boost)
+                selectedAttributeValueIndexes[value] = valueIndex * boost
+            })
+        })
+        const attributeCount = commonProduct.abstract.child_attributes.length
+
+        const rawVariants = commonProduct.abstract.abstract_product_variants
+
+        let variants = rawVariants.filter((variant) => {
+            return (variant.attributeValues.length === attributeCount
+                && variant.attributeValues.every((id) => selectedAttributeValues.includes(id))
+            )
+        }).map(variant => {
+                return ({
+                    abstract_variant: variant.id,
+                    abstract: variant,
+                    orderIndex: variant.attributeValues.reduce((result, v) => result + selectedAttributeValueIndexes[v], 0),
+                })
+            }
+        )
+
+        variants.sort((variant1, variant2) => variant1.orderIndex - variant2.orderIndex)
+        setProduct({variants: variants, attributes: selectedAttributes})
+    }
+
     const setUploadManager = (v) => {
         _setUploadManager(v)
     }
@@ -715,6 +749,7 @@ const NewProductContainer = function (props) {
             stores,
             setStores,
             defaultCurrency,
+            updateAttributes,
             appendArtworkToSide,
             appendTextToSide,
             updateArtwork,

@@ -1018,7 +1018,7 @@ const DesignContainer = (props) => {
                             <Col span={4} className="mockup-background-area" style={{paddingRight: "0em"}}>
                                 {
                                     hasColorAttribute &&
-                                    <ColorSelector multiple={true} mockupInfo={mockupInfo}/>
+                                    <ColorSelector multiple={false} mockupInfo={mockupInfo}/>
                                 }
                                 {
                                     (sideData && sideData.enable_background_color) &&
@@ -1237,7 +1237,8 @@ const DesignContainer = (props) => {
                             const attribute_value = x.abstract.attributes_value.find(x => x.attribute_name === attribute_name).label
                             return {
                                 attribute_value: attribute_value,
-                                variant_id: x.abstract_variant
+                                variant_id: x.abstract_variant,
+                                quantity: 0
                             }
                         })
 
@@ -1246,7 +1247,7 @@ const DesignContainer = (props) => {
                                 <Row className="p5 mb-15 row-same-height attribute-quantity">
                                     <Col className="d-flex flex-center" span={16}><b style={{fontSize:"1.75rem"}}>{variant.attribute_value}</b></Col>
                                     <Col span={8}><InputNumber size='large' min={0}
-                                                               defaultValue={0}></InputNumber></Col>
+                                                               ></InputNumber></Col>
                                 </Row>
                             ))}
                         </div>)
@@ -1254,6 +1255,7 @@ const DesignContainer = (props) => {
                 </>
             )}
             <div className="button-add-basket">
+                <div>ádaslkdja</div>
                 <Button primary onClick={handleAddBasket} fullWidth={true} size={'large'}>Add to Basket</Button>
             </div>
             </Drawer>

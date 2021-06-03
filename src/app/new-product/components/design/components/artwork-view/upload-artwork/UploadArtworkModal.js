@@ -329,7 +329,13 @@ const UploadArtworkModal = (props) => {
     const tabs = [
         {
             component: (
-                <DefaultArtwork/>
+                <DefaultArtwork
+                    constraints={constraints}
+                    multiple={multiple}
+                    maxArtwork={maxArtwork}
+                    currentNumberArtworks={currentNumberArtworks}
+                    onSelectExistArtwork={onSelectExistArtwork}
+                />
             ),
             content: "Default artwork",
             panelID: "default"
