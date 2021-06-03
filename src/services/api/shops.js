@@ -134,3 +134,10 @@ export const getShopDefault = () => {
         method: 'get'
     })
 }
+
+export const addCustomizePage = () => {
+    return createAuthApiRequest({
+        url: `/shops/create_customize_page/`,
+        method: 'post'
+    })
+}

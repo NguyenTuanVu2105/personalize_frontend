@@ -170,7 +170,7 @@ const UserPageContainer = (props) => {
                     setSelectedOrders,
                     setOrderId
                 }}>
-                    <div id="hidden"/>
+                    {/*<div id="hidden"/>*/}
                     {renderRoutes(props.route.routes)}
                 </ModalContext.Provider>
             </UserPageContext.Provider>

@@ -69,8 +69,8 @@ export const checkArtworkDPI = (artwork, side) => {
 export const getArtworkDPI = (artwork, side) => {
     if (side && artwork) {
         let scale = standardFloatNumber(((artwork.scale && artwork.scale[0]) || 1), SCALE_DECIMAL_PLACES)
-        let widthDpi = artwork.originWidth / (scale * side.fusion_size.artwork_fusion_size.width_in_inch)
-        let heightDpi = artwork.originHeight / (scale * side.fusion_size.artwork_fusion_size.height_in_inch)
+        let widthDpi = artwork.originWidth / (scale * side.fusion_size.artwork_fusion_size.width_in_inch) * 3
+        let heightDpi = artwork.originHeight / (scale * side.fusion_size.artwork_fusion_size.height_in_inch) * 3
         let artworkDPI = Math.max(widthDpi, heightDpi)
 
         return Math.abs(Math.round((artworkDPI + Number.EPSILON)))

@@ -756,6 +756,7 @@ const NewProductContainer = function (props) {
                 title={props.title ? props.title : "Create product"}
             />
             <NewProduct {...props} />
+            <div id="hidden"/>
         </NewProductContext.Provider>
     )
 }

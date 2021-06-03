@@ -80,6 +80,7 @@ const ProductDesignContainer = function () {
     }
 
     const createNewProduct = (product, isAddBackground) => {
+        if (!product.abstract) return
         const userProduct = {
             title: product.abstract.title,
             description: product.description,
@@ -120,11 +121,16 @@ const ProductDesignContainer = function () {
     }, [product.attributes])
 
     const setNewProduct = async (product_id=null) => {
+        console.log(product)
+        if (!product.abstract_product_id && !product_id) return
         let isAddBackground = true
         if (!product.abstract || product_id) {
             setLoading(true)
             const res = await getAProduct(product_id || product.abstract_product_id)
-            if (product_id) product.abstract_product_id = product_id
+            if (product_id) {
+                product.abstract_product_id = product_id
+                product.userProducts = []
+            }
             product.abstract = res.data
 
             isAddBackground = createNewProduct(product, isAddBackground)
@@ -179,6 +185,7 @@ const ProductDesignContainer = function () {
         if (isAddBackground) {
             const productMockupInfo = getMockupInfo(product.abstract, currentVariant)
             const userProduct = product.userProducts[0]
+            console.log(userProduct)
             let defaultColor = productMockupInfo.preview_meta.default_material_color
             defaultColor = defaultColor ? defaultColor.toUpperCase() : defaultColor
 
@@ -198,7 +205,7 @@ const ProductDesignContainer = function () {
 useEffect(() => {
     setNewProduct()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [])
+}, [product.abstract_product_id])
 
 return (<div>
         <NewProductDesignContext.Provider

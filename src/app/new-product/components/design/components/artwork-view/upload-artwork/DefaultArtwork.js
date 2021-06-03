@@ -16,7 +16,7 @@ import {
 import {getAllArtworkWithDefault} from "../../../../../../../services/api/artwork";
 import InfiniteScroll from "react-infinite-scroller"
 
-const PAGE_SIZE = 24
+const PAGE_SIZE = 100
 
 const DefaultArtwork = (props) => {
 
@@ -26,7 +26,6 @@ const DefaultArtwork = (props) => {
         maxArtwork,
         currentNumberArtworks,
         onSelectExistArtwork,
-        side_id
     } = props
 
     const [_artworks, _setArtworks] = useState([])
@@ -41,7 +40,7 @@ const DefaultArtwork = (props) => {
         const displayStatusQuery = activeStatus === ALL_QUERY_INDEX ? SERVER_ALL_QUERY_INDEX : activeStatus
         const ordering = "-last_used_time"
         // const _sizes = !isEmpty(size)  ? size.map((s) => `${s.width}x${s.height}`).join(",") : constraints.allowed_sizes.map((s) => `${s.width}x${s.height}`).join(",")
-        const artworksRes = await getAllArtworkWithDefault(page, PAGE_SIZE, query, [], displayStatusQuery, null, null, ordering, true, side_id)
+        const artworksRes = await getAllArtworkWithDefault(page, PAGE_SIZE, query, [], displayStatusQuery, null, null, ordering, true)
         if (!artworksRes.success)
             return
         const data = artworksRes.data

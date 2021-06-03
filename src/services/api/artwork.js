@@ -17,8 +17,8 @@ export const getAllArtworks = (page, limit = 10, searchQuery, size, display = "-
     })
 }
 
-export const getAllArtworkWithDefault = (page, limit = 10, searchQuery, size, display = "-1", since, until, ordering, with_default=false, side_id=null) => {
-    const params = {q: searchQuery, page, limit, size, since, until, with_default, side_id}
+export const getAllArtworkWithDefault = (page, limit = 10, searchQuery, size, display = "-1", since, until, ordering, with_default=false) => {
+    const params = {q: searchQuery, page, limit, size, since, until, with_default}
     // const is_active = display === "1" ? "true" : display === "2" ? "false" : null
     // if (is_active) params.is_active = is_active
     if (display !== "-1") params.status = display

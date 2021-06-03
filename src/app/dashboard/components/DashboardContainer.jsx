@@ -5,7 +5,7 @@ import FinancialCardContainer from './FinancialCardContainer'
 import ChartContainer from './ChartContainer'
 import TimeSelector from './TimeSelector'
 import {getAnalytics, getBillingAnalytics} from '../../../services/api/dashboard'
-import {Card, Checkbox, Input, Spin} from 'antd'
+import {Card, Checkbox, Input, Spin, Modal, notification} from 'antd'
 import UserPageContext from '../../userpage/context/UserPageContext'
 import {DisplayText, Heading, TextContainer} from '@shopify/polaris'
 import {produceChartjsData} from '../helper/chartDataHandling'
@@ -15,13 +15,16 @@ import {COOKIE_KEY} from '../../../services/storage/sessionStorage'
 import {DEFAULT_TIMEZONE, TIMEZONES} from '../../user-settings/constants/timezones'
 import {getLocalStorage} from '../../../services/storage/localStorage'
 import AppContext from "../../../AppContext"
+import {addCustomizePage} from "../../../services/api/shops";
 
+const {confirm} = Modal
 
 function DashboardContainer() {
     const [loading, setLoadingState] = useState(true)
 
     const [timeRange, setTimeRange] = useState(getDefaultDateOption())
-
+    const [addPageCheck, setAddPageCheck] = useState(false)
+    const [showAddPageCheck, setShowAddPageCheck] = useState(true)
     const timezone = getLocalStorage(COOKIE_KEY.TIMEZONE, DEFAULT_TIMEZONE)
 
     const {setNameMap} = useContext(UserPageContext)
@@ -136,6 +139,27 @@ function DashboardContainer() {
         }
     }
 
+    const _addCustomizePage = async () => {
+        const {data} = await addCustomizePage()
+        if (data.success) {
+            notification["success"]({
+                message: "Add personalize page successfully !!!"
+            })
+        }
+    }
+    const handleChangeAddPage = () => {
+        confirm({
+            content: "Are you sure add personalize page to your store?",
+            onOk() {
+                _addCustomizePage()
+                setAddPageCheck(true)
+            },
+            onCancel() {
+                console.log('Cancel');
+            },
+        })
+
+    }
     return (
         <div className="dashboard-container">
             <DocTitle title="Dashboard"/>
@@ -158,16 +182,17 @@ function DashboardContainer() {
                         </div>
                     </div>
                     <Spin spinning={loading} wrapperClassName={"page-main-content"}>
+                        {showAddPageCheck &&
                         <Card title={<b>Personalize Design</b>} className={'m10'}>
                             <div className={"p10 m5"}>
                                 <span style={{fontSize: '1.5rem'}}> Allow to  push personalize design to Shopify</span>&nbsp;
-                                <Checkbox></Checkbox>
+                                <Checkbox onChange={handleChangeAddPage} checked={addPageCheck}></Checkbox>
                             </div>
                             <div className={"p10 m5"}>
                                 <span style={{fontSize: '1.5rem'}}> Price for sell increase each product</span> &nbsp;
                                 <Input defaultValue="50" style={{width: '75px'}} suffix="%" />
                             </div>
-                        </Card>
+                        </Card> }
                         <TextContainer>
                             <div style={{display: 'flex', justifyContent: 'space-between'}}>
                                 <Heading>Fulfillment status</Heading>
@@ -190,7 +215,6 @@ function DashboardContainer() {
                     </Spin>
                 </div>
             </div>
-
         </div>
     )
 }
